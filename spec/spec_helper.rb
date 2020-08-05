@@ -1,7 +1,9 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 #
 require 'rspec'
+require 'turnip'
 RSpec.configure do |config|
+  Dir.glob('spec/steps/*steps.rb') { |f| load f, true }
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
